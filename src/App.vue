@@ -1,6 +1,5 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link>
     <router-link to="/fizzbuzz">FizzBuzz</router-link> |
     <router-link to="/dice">NicerDicer</router-link>
   </div>

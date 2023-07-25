@@ -1,5 +1,5 @@
 const fizzbuzz = (count: Number) : String => {
-    return '';
+    return 'Fizz';
 }
 
 export default fizzbuzz;
