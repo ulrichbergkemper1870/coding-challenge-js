@@ -8,6 +8,5 @@
 </template>
 
 <script setup lang="ts">
-
-const resultString = 'Hello hello';
+    const resultString = 'Hello hello';
 </script>
