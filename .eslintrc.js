@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   env: {
     node: true,
+    es2022: 2022
   },
   extends: [
     "plugin:vue/vue3-essential",
@@ -21,7 +22,7 @@ module.exports = {
     {
       files: [
         "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)",
+        "**/tests/**/*.test.{j,t}s?(x)",
       ],
       env: {
         jest: true,
