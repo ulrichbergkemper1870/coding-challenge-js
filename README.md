@@ -1,4 +1,4 @@
-# vue3-ts-codesandbox-template
+# Coding challenge #2
 
 ## Project setup
 ```
@@ -17,18 +17,10 @@ yarn build
 
 ### Run your unit tests
 ```
-yarn test:unit
-```
-
-### Run your end-to-end tests
-```
-yarn test:e2e
+yarn test
 ```
 
 ### Lints and fixes files
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
