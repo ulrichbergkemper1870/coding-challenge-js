@@ -24,7 +24,7 @@
     },
     "test": {
       "name": "test",
-      "command": "yarn test:unit",
+      "command": "yarn test",
       "runAtStart": true
     },
     "lint": {
