@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import path from 'path';
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import path from "path";
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   plugins: [vue()],
@@ -8,9 +8,9 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
+    extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
   },
   server: {
     port: 4040,
   },
-})
+});

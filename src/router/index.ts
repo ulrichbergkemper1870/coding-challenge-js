@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Fizzbuzz from "@/views/Fizzbuzz.vue";
+import NicerDicer from "@/views/NicerDicer.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -9,6 +10,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/fizzbuzz",
     component: Fizzbuzz,
+  },
+  {
+    path: "/nicerdicer",
+    component: NicerDicer,
   },
 ];
 
