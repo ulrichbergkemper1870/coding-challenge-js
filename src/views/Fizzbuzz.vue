@@ -1,11 +1,14 @@
 <template>
   <h1>FizzBuzz</h1>
-  <form action="submit">
-    <input type="text" name="fizzbuzzNumber" v-model="fizzbuzzNumber" />
-    <button @click="updatefizzbuzz">Show output</button>
-    <h3>Output</h3>
-    <p>{{ output }}</p>
-  </form>
+  <input type="text" name="fizzbuzzNumber" v-model="fizzbuzzNumber" />
+  <button @click="updatefizzbuzz">Show output</button>
+  <h3>Output</h3>
+  <p>{{ output }}</p>
+  <ol v-if="outputSplit?.length > 0 && output != 'Failure'" id="output">
+    <li v-for="item in outputSplit" :key="item">
+      {{ item }}
+    </li>
+  </ol>
 </template>
 
 <script setup lang="ts">
@@ -13,15 +16,17 @@ import fizzbuzz from "../fizzbuzz";
 import { ref } from "vue";
 
 const fizzbuzzNumber = ref(0);
-const output = ref("");
+const output = ref<string>();
+const outputSplit = ref<string[]>();
 
 const updatefizzbuzz = () => {
-  console.log("update");
   output.value = fizzbuzz(fizzbuzzNumber.value);
-  console.log(output, fizzbuzzNumber.value);
+  outputSplit.value = output.value.split(", ");
 };
 </script>
 
 <style>
-/* css goes here */
+#output {
+  display: inline-block;
+}
 </style>
