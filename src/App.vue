@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
     <router-link to="/fizzbuzz">FizzBuzz</router-link> |
-    NicerDicer
+    <router-link to="/nicerdicer">Nicer Dicer</router-link> |
   </div>
   <router-view />
 </template>
