@@ -1,17 +1,27 @@
 <template>
   <h1>FizzBuzz</h1>
   <form action="submit">
-    <input type="text" name="fizzbuzzNumber"/>
-    <button>Show output</button>
+    <input type="text" name="fizzbuzzNumber" v-model="fizzbuzzNumber" />
+    <button @click="updatefizzbuzz">Show output</button>
+    <h3>Output</h3>
+    <p>{{ output }}</p>
   </form>
-  <h3>Output</h3>
-  <p>Display the output here</p>
 </template>
 
 <script setup lang="ts">
-  // script goes here
+import fizzbuzz from "../fizzbuzz";
+import { ref } from "vue";
+
+const fizzbuzzNumber = ref(0);
+const output = ref("");
+
+const updatefizzbuzz = () => {
+  console.log("update");
+  output.value = fizzbuzz(fizzbuzzNumber.value);
+  console.log(output, fizzbuzzNumber.value);
+};
 </script>
 
 <style>
-  /* css goes here */
+/* css goes here */
 </style>
