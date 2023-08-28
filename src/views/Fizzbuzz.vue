@@ -1,7 +1,9 @@
 <template>
   <h1>FizzBuzz</h1>
   <input type="text" name="fizzbuzzNumber" v-model="fizzbuzzNumber" />
-  <button @click="updatefizzbuzz">Show output</button>
+  <button :disabled="!isNaN(Number(output))" @click="updatefizzbuzz">
+    Show output
+  </button>
   <h3>Output</h3>
   <p>{{ output }}</p>
   <ol v-if="outputSplit?.length > 0 && output != 'Failure'" id="output">
@@ -15,7 +17,7 @@
 import fizzbuzz from "../fizzbuzz";
 import { ref } from "vue";
 
-const fizzbuzzNumber = ref(0);
+const fizzbuzzNumber = ref<number>(0);
 const output = ref<string>();
 const outputSplit = ref<string[]>();
 
