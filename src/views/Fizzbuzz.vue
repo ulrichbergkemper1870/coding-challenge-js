@@ -1,17 +1,34 @@
 <template>
   <h1>FizzBuzz</h1>
-  <form action="submit">
-    <input type="text" name="fizzbuzzNumber"/>
-    <button>Show output</button>
-  </form>
+  <input type="text" name="fizzbuzzNumber" v-model="fizzbuzzNumber" />
+  <button :disabled="!isNaN(Number(output))" @click="updatefizzbuzz">
+    Show output
+  </button>
   <h3>Output</h3>
-  <p>Display the output here</p>
+  <p>{{ output }}</p>
+  <ol v-if="outputSplit && output != 'Failure'" id="output">
+    <li v-for="item in outputSplit" :key="item">
+      {{ item }}
+    </li>
+  </ol>
 </template>
 
 <script setup lang="ts">
-  // script goes here
+import fizzbuzz from "../fizzbuzz";
+import { ref } from "vue";
+
+const fizzbuzzNumber = ref<number>(0);
+const output = ref<string>();
+const outputSplit = ref<string[]>();
+
+const updatefizzbuzz = () => {
+  output.value = fizzbuzz(fizzbuzzNumber.value);
+  outputSplit.value = output.value.split(", ");
+};
 </script>
 
 <style>
-  /* css goes here */
+#output {
+  display: inline-block;
+}
 </style>
