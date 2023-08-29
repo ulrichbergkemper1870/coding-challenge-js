@@ -6,7 +6,7 @@
   </button>
   <h3>Output</h3>
   <p>{{ output }}</p>
-  <ol v-if="outputSplit?.length > 0 && output != 'Failure'" id="output">
+  <ol v-if="outputSplit && output != 'Failure'" id="output">
     <li v-for="item in outputSplit" :key="item">
       {{ item }}
     </li>
